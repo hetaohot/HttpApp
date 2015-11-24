@@ -22,4 +22,27 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.4.5</version>
+                <configuration>
+                    <container>
+                        <containerId>tomcat8x</containerId>
+                        <home>E:\apache-tomcat-8.0.8</home>
+                    </container>
+                    <configuration>
+                        <type>existing</type>
+                        <home>E:\apache-tomcat-8.0.8</home>
+                    </configuration>
+                </configuration>
+                <executions>
+        <execution>
+            <id>tomcat-deploy</id>
+            <phase>package</phase>
+            <goals><goal>deploy</goal></goals>
+        </execution>
+    </executions> 
+</plugin>
+  
 </project>
